@@ -21,6 +21,9 @@ function verificarPalpite(palpite) {
         } else{
             resolve("Muito alto! Tente novamente.")
         }
-            
     });
+}
+async function iniciarJogo(){
+    await gerarNumeroAleatorio();
+    const botaoEnviar = document.getElementById("enviar");
 }
