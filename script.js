@@ -14,7 +14,13 @@ function verificarPalpite(palpite) {
         tentativas++;
         if(palpite < 1 || palpite > 100) {
             reject("Por favor, digite um número de 1 a 100.")
-        }  else if (palpite === numeroSecreto)
+        }  else if (palpite === numeroSecreto){
             resolve("Parabéns, você acertou o número");
+        } else if (palpite < numeroSecreto){
+            resolve("Muito baixo! Tente novamente.")
+        } else{
+            resolve("Muito alto! Tente novamente.")
+        }
+            
     });
 }
