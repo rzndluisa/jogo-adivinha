@@ -34,7 +34,7 @@ async function iniciarJogo() {
         try {
             const palpite = parseInt(inputPalpite.value);
             const mensagem = await
-             verificarPalpite(palpite);
+                verificarPalpite(palpite);
             resultado.textContent = mensagem;
             tentativasDisplay.textContent = `Tentativas: ${tentativas}`;
 
@@ -44,14 +44,14 @@ async function iniciarJogo() {
             // Reinicia o jogo se o usuário acertar
             if (mensagem.includes("acertou")) {
                 tentativas = 0;
-                resultado.textContent += "O jogo será reiniciado!";
+                resultado.textContent += " O jogo será reiniciado!";
                 await gerarNumeroAleatorio();
                 tentativasDisplay.textContent = "";
             }
         } catch (erro) {
             resultado.textContent = erro;
         }
-        });
+    });
 }
 // Inicia o jogo ao carregar a página
 window.onload = iniciarJogo;
